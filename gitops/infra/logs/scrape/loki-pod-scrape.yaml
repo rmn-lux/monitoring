@@ -1,0 +1,15 @@
+---
+apiVersion: operator.victoriametrics.com/v1beta1
+kind: VMPodScrape
+metadata:
+  name: loki-pod-scrape
+spec:
+  podMetricsEndpoints:
+    - port: http-metrics
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - loki
+          - promtail

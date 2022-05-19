@@ -1,0 +1,25 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: loki-stack
+spec:
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  releaseName: loki-stack
+  targetNamespace: logs
+  chart:
+    spec:
+      chart: loki-stack
+      sourceRef:
+        kind: HelmRepository
+        name: loki-stack
+      version: "2.6.4"
+  valuesFrom:
+    - kind: ConfigMap
+      name: loki-values

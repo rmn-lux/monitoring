@@ -1,0 +1,31 @@
+
+nameOverride: victoria-metrics
+
+prometheus-node-exporter:
+  hostRootFsMount: false
+
+vmsingle:
+  # https://github.com/VictoriaMetrics/operator/blob/master/docs/api.MD#vmsinglespec
+  spec:
+    extraArgs:
+      vmalert.proxyURL: http://vmalert-metrics-victoria-metrics:8080
+
+# Grafana
+# Sources
+grafana:
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+      - name: Loki
+        # change namespace 'logs' for your own if necessary
+        url: http://loki-stack.logs.svc:3100 
+        type: loki
+        access: proxy
+        version: 1
+        editable: false
+      # - name: VictoriaMetrics # added by default from helm chart vm-k8s-stack
+      #   url: http://vmsingle-metrics-victoria-metrics.metrics:8429
+      #   type: prometheus
+      #   access: proxy
+      #   isDefault: true
