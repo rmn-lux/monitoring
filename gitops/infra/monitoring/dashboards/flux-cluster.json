@@ -23,16 +23,12 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 14936,
   "graphTooltip": 0,
-  "id": 11,
-  "iteration": 1652024473103,
+  "id": 2,
+  "iteration": 1652964094799,
   "links": [],
   "liveNow": false,
   "panels": [
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "P4169E866C3094E38"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -77,9 +73,13 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P4169E866C3094E38"
+          },
           "exemplar": true,
           "expr": "count(gotk_reconcile_condition{namespace=~\"\",type=\"Ready\",status=\"True\",kind=~\"Kustomization|HelmRelease\"})\n-\nsum(gotk_reconcile_condition{namespace=~\"\",type=\"Ready\",status=\"Deleted\",kind=~\"Kustomization|HelmRelease\"})",
           "interval": "",
@@ -91,10 +91,6 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "P4169E866C3094E38"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -135,9 +131,14 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P4169E866C3094E38"
+          },
+          "exemplar": true,
           "expr": "sum(gotk_reconcile_condition{namespace=~\"\",type=\"Ready\",status=\"False\",kind=~\"Kustomization|HelmRelease\"})",
           "interval": "",
           "legendFormat": "",
@@ -148,10 +149,6 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "P4169E866C3094E38"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -196,9 +193,14 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P4169E866C3094E38"
+          },
+          "exemplar": true,
           "expr": "count(gotk_reconcile_condition{namespace=~\"\",type=\"Ready\",status=\"True\",kind=~\"GitRepository|HelmRepository|Bucket\"})\n-\nsum(gotk_reconcile_condition{namespace=~\"\",type=\"Ready\",status=\"Deleted\",kind=~\"GitRepository|HelmRepository|Bucket\"})",
           "interval": "",
           "legendFormat": "",
@@ -209,10 +211,6 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "P4169E866C3094E38"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -253,9 +251,14 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P4169E866C3094E38"
+          },
+          "exemplar": true,
           "expr": "sum(gotk_reconcile_condition{namespace=~\"\",type=\"Ready\",status=\"False\",kind=~\"GitRepository|HelmRepository|Bucket\"})",
           "interval": "",
           "legendFormat": "",
@@ -266,10 +269,6 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "P4169E866C3094E38"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -315,9 +314,14 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P4169E866C3094E38"
+          },
+          "exemplar": true,
           "expr": "  sum(rate(gotk_reconcile_duration_seconds_sum{namespace=~\"\",kind=~\"Kustomization|HelmRelease\"}[5m])) by (kind)\n/\n  sum(rate(gotk_reconcile_duration_seconds_count{namespace=~\"\",kind=~\"Kustomization|HelmRelease\"}[5m])) by (kind)",
           "interval": "",
           "legendFormat": "{{kind}}",
@@ -328,10 +332,6 @@
       "type": "bargauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "P4169E866C3094E38"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -377,9 +377,14 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P4169E866C3094E38"
+          },
+          "exemplar": true,
           "expr": "  sum(rate(gotk_reconcile_duration_seconds_sum{namespace=~\"\",kind=~\"GitRepository|HelmRepository|Bucket\"}[5m])) by (kind)\n/\n  sum(rate(gotk_reconcile_duration_seconds_count{namespace=~\"\",kind=~\"GitRepository|HelmRepository|Bucket\"}[5m])) by (kind)",
           "interval": "",
           "legendFormat": "{{kind}}",
@@ -407,14 +412,11 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "P4169E866C3094E38"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
           "custom": {
+            "align": "auto",
             "displayMode": "auto",
             "filterable": true
           },
@@ -481,9 +483,14 @@
         },
         "showHeader": true
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P4169E866C3094E38"
+          },
+          "exemplar": false,
           "expr": "gotk_reconcile_condition{namespace=~\"\",type=\"Ready\",status=\"False\",kind=~\"Kustomization|HelmRelease\"}",
           "format": "table",
           "instant": true,
@@ -526,14 +533,11 @@
       "type": "table"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "P4169E866C3094E38"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
           "custom": {
+            "align": "auto",
             "displayMode": "auto",
             "filterable": true
           },
@@ -600,9 +604,14 @@
         },
         "showHeader": true
       },
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "8.3.6",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P4169E866C3094E38"
+          },
+          "exemplar": false,
           "expr": "gotk_reconcile_condition{namespace=~\"\",type=\"Ready\",status=\"False\",kind=~\"GitRepository|HelmRepository|Bucket\"}",
           "format": "table",
           "instant": true,
@@ -666,10 +675,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "P4169E866C3094E38"
-      },
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -701,7 +706,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "8.3.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -711,6 +716,11 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P4169E866C3094E38"
+          },
+          "exemplar": true,
           "expr": "  sum(rate(gotk_reconcile_duration_seconds_sum{namespace=~\"\",kind=~\"Kustomization|HelmRelease\"}[5m])) by (kind, name)\n/\n  sum(rate(gotk_reconcile_duration_seconds_count{namespace=~\"\",kind=~\"Kustomization|HelmRelease\"}[5m])) by (kind, name)",
           "hide": false,
           "interval": "",
@@ -753,10 +763,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "P4169E866C3094E38"
-      },
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -788,7 +794,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.2",
+      "pluginVersion": "8.3.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -798,6 +804,11 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P4169E866C3094E38"
+          },
+          "exemplar": true,
           "expr": "  sum(rate(gotk_reconcile_duration_seconds_sum{namespace=~\"\",kind=~\"GitRepository|HelmRepository|Bucket\"}[5m])) by (kind, name)\n/\n  sum(rate(gotk_reconcile_duration_seconds_count{namespace=~\"\",kind=~\"GitRepository|HelmRepository|Bucket\"}[5m])) by (kind, name)",
           "hide": false,
           "interval": "",
@@ -836,8 +847,8 @@
       }
     }
   ],
-  "refresh": "10s",
-  "schemaVersion": 35,
+  "refresh": "15m",
+  "schemaVersion": 34,
   "style": "light",
   "tags": [
     "flux"
@@ -864,9 +875,9 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": ""
+          "selected": true,
+          "text": "flux-system",
+          "value": "flux-system"
         },
         "datasource": {
           "type": "prometheus",
@@ -894,7 +905,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
